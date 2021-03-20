@@ -1,0 +1,4 @@
+66315 -->  price imbalance settlement international grid
+https://api.wattsight.com/#curves/66315
+
+(TIMEFRAME 15 minutes)

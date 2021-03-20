@@ -67,8 +67,21 @@ def getImbalancePriceCurve():
 
     DownloadTimeSeriesCurve(access_token,'66305')
     
+
+
+#Download Price Imbalance curve 
+def getImbalanceGRIDCurve():
+  
+   #Access token expire so need to refresh it sometimes
+    access_token = getauthToken()
+    print(access_token)
+
+    DownloadTimeSeriesCurve(access_token,'66315')
+
+
 def main():
-    getImbalancePriceCurve()
+    #getImbalancePriceCurve()
     #getIntradayCurve()
+    getImbalanceGRIDCurve()
 
 main()
