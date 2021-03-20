@@ -48,7 +48,7 @@ def DownloadTimeSeriesCurve(access_token, curveID):
 
 
 #Downlaod intradayPriceCurve and save into a csv file
-def getIntradayCurve():
+def getIntradayCurveDE():
    #Access token expire so need to refresh it sometimes
     access_token = getauthToken()
 
@@ -57,6 +57,18 @@ def getIntradayCurve():
     for i in curveIDIntraday:
         DownloadTimeSeriesCurve(access_token,i)
     
+
+
+#Downlaod intradayPriceCurve and save into a csv filec
+def getIntradayCurveFR():
+   #Access token expire so need to refresh it sometimes
+    access_token = getauthToken()
+
+    curveIDIntraday = ['1086', '143297', '143333']
+
+    for i in curveIDIntraday:
+        DownloadTimeSeriesCurve(access_token,i) 
+
 
 #Download Price Imbalance curve 
 def getImbalancePriceCurve():
@@ -136,6 +148,9 @@ def main():
     #getCoalCurve()
     #getLigniteCurve()
     
-    getGASCurve()
+    #getGASCurve()
+
+
+    getIntradayCurveFR()
 
 main()
