@@ -1,0 +1,12 @@
+1103 -->  pri de intraday €/mwh cet min15 a 
+https://api.wattsight.com/#curves/1103
+(TIMEFRAME 15 minutes)
+
+143289 --> VWAP (volume weight average price) of trades last trading hour before delivery start of hourly contracts.
+https://api.wattsight.com/#curves/143289
+(TIMEFRAME 1h)
+
+143325 --> VWAP (volume weight average price) of trades last 3 trading hours before delivery start of hourly contracts.
+https://api.wattsight.com/#curves/143325
+(TIMEFRAME 1h)
+

@@ -20,7 +20,7 @@ def getauthToken():
 
 
 #use this function to download time serial data, find curveID here  https://api.wattsight.com/#curves
-def DownloadPriceCurve(access_token, curveID):
+def DownloadTimeSeriesCurve(access_token, curveID):
 
     headers = {
         'accept': 'application/json',
@@ -32,32 +32,28 @@ def DownloadPriceCurve(access_token, curveID):
     )
 
     response = r.get('https://api.wattsight.com/api/series/'+str(curveID), headers=headers, params=params)
-    print(response.content)
     price = response.json()
-    #print(price)
     df = pd.DataFrame(price["points"])
     
-    # saving the dataframe  
-    df.to_csv('priDEintradayID1103.csv',header=['Timestamp','Price'])  
-
-    
 #the api return a unixtimestamp use this Function to replace it with a datatype and save in a new csv
-def UnixTimestampConverter():
-    df = pd.read_csv('/Users/emanuele.cesari/Desktop/Start_Hack21/Data_extractor/priDEintradayID1103.csv', header=0, index_col=0, parse_dates=True, squeeze=True)
-
     dt = []
-
-    for i in df["Timestamp"]:
+    for i in df[0]:
+        print(i)
         dt.append(datetime.datetime.fromtimestamp(i / 1000))
+    df[0] = dt
+    df.to_csv(str(curveID)+'.csv',index=False)
 
-    df["Timestamp"] = dt 
-    df.to_csv('PriDEintradayID1103.csv',index=False)
 
 
 def main():
     
     #Access token expire so need to refresh it sometimes
     access_token = getauthToken()
+
+    curveIDIntraday = ['1103', '143289', '143325']
+    for i in curveIDIntraday:
+        DownloadTimeSeriesCurve(access_token,i)
+   
 
     #Download pri de intraday €/mwh cet min15 a
     #DownloadPriceCurve(access_token, 1103)
