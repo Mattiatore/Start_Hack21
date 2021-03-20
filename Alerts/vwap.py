@@ -10,8 +10,15 @@ import pandas as pd
 from sklearn.metrics import confusion_matrix
 from sklearn.ensemble import GradientBoostingClassifier
 
-one_hour= pd.read_csv("143289.csv", names= ["Time", "Vwap_1"], skiprows=1)
-three_hour= pd.read_csv("143325.csv", names= ["Time", "Vwap_3"], skiprows=1)
+#German market
+one_hour= pd.read_csv("C:/Users/Mattia/Desktop/Start_Hack21/dataset/Intraday/De/143289.csv", names= ["Time", "Vwap_1"], skiprows=1)
+three_hour= pd.read_csv("C:/Users/Mattia/Desktop/Start_Hack21/dataset/Intraday/De/143325.csv", names= ["Time", "Vwap_3"], skiprows=1)
+
+
+"""France market
+one_hour= pd.read_csv("C:/Users/Mattia/Desktop/Start_Hack21/dataset/Intraday/FR/143297.csv", names= ["Time", "Vwap_1"], skiprows=1)
+three_hour= pd.read_csv("C:/Users/Mattia/Desktop/Start_Hack21/dataset/Intraday/FR/143333.csv", names= ["Time", "Vwap_3"], skiprows=1)
+"""
 
 df = pd.merge(one_hour, three_hour, on='Time')
 
