@@ -1,0 +1,10 @@
+Our idea is to generate a web app designed similarly to the following dashboard ( show ) ... descripe non technical part if neeed ....
+indicator for vwap: compares the vwap 1 hour with the vwap 3 h, we first considered a baseline model to predict if price will increase in the next hour. 
+This simply compares the 1 hour vwap with the 3 hour vwap, if it's lower we predict that the price will increase in the next our.
+From this we obtained an accuracy of 63% and confusion matrix ( we could add image ).
+In our second model we used xgboost to predict the next hour increase or decrease in price given the 1h and 3h vwap,
+it gives an accuracy of 74% and confusion matrix of ...
+we also considered the production quantity of different energy sources such as... and analyzed their production data from Volue 
+during the period 2018 and 2021, we then implemented a customizable percentile calculator for each of them. 
+we developed a relevant price changes function on our dashboard with customizable parameters such as threshold and windows-day 
+to detect relevant price changes in the time series.
