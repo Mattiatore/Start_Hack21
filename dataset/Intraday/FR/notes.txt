@@ -1,0 +1,13 @@
+1086 -->  pri fr intraday €/mwh cet h a
+https://api.wattsight.com/#curves/1086
+(TIMEFRAME 1 H)
+
+143297 --> VWAP of trades last trading hour before delivery start of hourly contracts.
+https://api.wattsight.com/#curves/143297
+
+(TIMEFRAME 1 H)
+
+143333 --> WAP of trades last 3 trading hours before delivery start of hourly contracts.
+https://api.wattsight.com/#curves/143333
+
+(TIMEFRAME 1 H)

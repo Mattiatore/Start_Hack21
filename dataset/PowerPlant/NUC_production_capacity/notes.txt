@@ -1,0 +1,7 @@
+21899 -->  Production Nuclear Power
+https://api.wattsight.com/#curves/21899
+
+(TIMEFRAME 1h)
+
+128629 --> Capacity Nuclear Power
+https://api.wattsight.com/#curves/128629

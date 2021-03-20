@@ -48,7 +48,7 @@ def DownloadTimeSeriesCurve(access_token, curveID):
 
 
 #Downlaod intradayPriceCurve and save into a csv file
-def getIntradayCurve():
+def getIntradayCurveDE():
    #Access token expire so need to refresh it sometimes
     access_token = getauthToken()
 
@@ -57,6 +57,18 @@ def getIntradayCurve():
     for i in curveIDIntraday:
         DownloadTimeSeriesCurve(access_token,i)
     
+
+
+#Downlaod intradayPriceCurve and save into a csv filec
+def getIntradayCurveFR():
+   #Access token expire so need to refresh it sometimes
+    access_token = getauthToken()
+
+    curveIDIntraday = ['1086', '143297', '143333']
+
+    for i in curveIDIntraday:
+        DownloadTimeSeriesCurve(access_token,i) 
+
 
 #Download Price Imbalance curve 
 def getImbalancePriceCurve():
@@ -79,9 +91,66 @@ def getImbalanceGRIDCurve():
     DownloadTimeSeriesCurve(access_token,'66315')
 
 
+#Download Nuc Production curve and available capacity
+def getNUCCurve():
+
+    curveIDs = ['21899', '128629']
+
+   #Access token expire so need to refresh it sometimes
+    access_token = getauthToken()
+
+    for i in curveIDs:
+        DownloadTimeSeriesCurve(access_token,i)
+
+
+
+#Download CoalProduction curve
+def getCoalCurve():
+
+    curveIDs = ['28138']
+
+   #Access token expire so need to refresh it sometimes
+    access_token = getauthToken()
+
+    for i in curveIDs:
+        DownloadTimeSeriesCurve(access_token,i)
+
+
+#Download LigniteProduction curve
+def getLigniteCurve():
+
+    curveIDs = ['28266']
+
+   #Access token expire so need to refresh it sometimes
+    access_token = getauthToken()
+
+    for i in curveIDs:
+        DownloadTimeSeriesCurve(access_token,i)
+
+
+#DownloadGASProduction curve
+def getGASCurve():
+
+    curveIDs = ['28336']
+
+   #Access token expire so need to refresh it sometimes
+    access_token = getauthToken()
+
+    for i in curveIDs:
+        DownloadTimeSeriesCurve(access_token, i)
+        
+
 def main():
     #getImbalancePriceCurve()
     #getIntradayCurve()
-    getImbalanceGRIDCurve()
+    #getImbalanceGRIDCurve()
+    #getNUCCurve()
+    #getCoalCurve()
+    #getLigniteCurve()
+    
+    #getGASCurve()
+
+
+    getIntradayCurveFR()
 
 main()

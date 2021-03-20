@@ -1,0 +1,2 @@
+28266 -->  Production Lignite Thermal Power
+https://api.wattsight.com/#curves/28266
