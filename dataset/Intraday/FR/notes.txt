@@ -1,4 +1,4 @@
-1086 -->  pri de intraday €/mwh cet min15 a 
+1086 -->  pri fr intraday €/mwh cet h a
 https://api.wattsight.com/#curves/1086
 (TIMEFRAME 1 H)
 
