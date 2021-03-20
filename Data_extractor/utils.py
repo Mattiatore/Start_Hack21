@@ -21,21 +21,23 @@ def getauthToken():
 
 #use this function to download time serial data, find curveID here  https://api.wattsight.com/#curves
 def DownloadTimeSeriesCurve(access_token, curveID):
-
+    print('DownloadTimeSeriesCurve called')
     headers = {
         'accept': 'application/json',
         'authorization': 'Bearer '+ access_token,
     }
     params = (
-        ('from', '2018-01-10'),
+        ('from', '2018-12-10'),
         ('to', '2021-03-21'),
     )
 
-    response = r.get('https://api.wattsight.com/api/series/'+str(curveID), headers=headers, params=params)
+    response = r.get('https://api.wattsight.com/api/series/' + str(curveID), headers=headers, params=params)
+    print(response)
     price = response.json()
+    print(price)
     df = pd.DataFrame(price["points"])
     
-#the api return a unixtimestamp use this Function to replace it with a datatype and save in a new csv
+#the api return a unixtimestamp  here I am replacing it with a datatype and save in a new csv
     dt = []
     for i in df[0]:
         print(i)
@@ -45,20 +47,28 @@ def DownloadTimeSeriesCurve(access_token, curveID):
 
 
 
-def main():
-    
-    #Access token expire so need to refresh it sometimes
+#Downlaod intradayPriceCurve and save into a csv file
+def getIntradayCurve():
+   #Access token expire so need to refresh it sometimes
     access_token = getauthToken()
 
     curveIDIntraday = ['1103', '143289', '143325']
+
     for i in curveIDIntraday:
         DownloadTimeSeriesCurve(access_token,i)
-   
-
-    #Download pri de intraday €/mwh cet min15 a
-    #DownloadPriceCurve(access_token, 1103)
     
-    #UnixTimestampConverter()
 
+#Download Price Imbalance curve 
+def getImbalancePriceCurve():
+  
+   #Access token expire so need to refresh it sometimes
+    access_token = getauthToken()
+    print(access_token)
+
+    DownloadTimeSeriesCurve(access_token,'66305')
+    
+def main():
+    getImbalancePriceCurve()
+    #getIntradayCurve()
 
 main()
