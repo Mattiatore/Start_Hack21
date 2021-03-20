@@ -1,0 +1,4 @@
+28336 -->  Production Lignite Thermal Power
+https://api.wattsight.com/#curves/28336
+
+TIMEFRAME 15 Minutes

@@ -8,8 +8,9 @@ from matplotlib import pyplot
 
 #print basic chart
 def printChart():
-    series = pd.read_csv('/Users/emanuele.cesari/Desktop/Start_Hack21/Data_extractor/66315.csv', header=0, index_col=0, parse_dates=True, squeeze=True)
+    series = pd.read_csv('/Users/emanuele.cesari/Desktop/Start_Hack21/PowerPlant/LIGNITE_production/28266.csv', header=0, index_col=0, parse_dates=True, squeeze=True)
     series.plot()
     pyplot.show()
+
 
 printChart()
