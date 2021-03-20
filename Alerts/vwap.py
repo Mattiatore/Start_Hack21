@@ -47,4 +47,7 @@ print(confusion_matrix(y, clf.predict(X) , normalize="true"))
 # accuracy of XGboost
 print(accuracy_score(y, clf.predict(X)))
 
+# new data
+# clf.predict_proba(X)
+
 
