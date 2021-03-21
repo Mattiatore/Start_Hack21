@@ -5,8 +5,8 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 from sklearn.ensemble import GradientBoostingClassifier
 
 #German market Vwap data extracted from Volue
-one_hour= pd.read_csv("C:/Users/Mattia/Desktop/Start_Hack21/dataset/Intraday/De/143289.csv", names= ["Time", "Vwap_1"], skiprows=1)
-three_hour= pd.read_csv("C:/Users/Mattia/Desktop/Start_Hack21/dataset/Intraday/De/143325.csv", names= ["Time", "Vwap_3"], skiprows=1)
+one_hour= pd.read_csv("/Users/emanuele.cesari/Desktop/Start_Hack21/dataset/Intraday/De/143289.csv", names= ["Time", "Vwap_1"], skiprows=1)
+three_hour= pd.read_csv("/Users/emanuele.cesari/Desktop/Start_Hack21/dataset/Intraday/De/143325.csv", names= ["Time", "Vwap_3"], skiprows=1)
 
 df = pd.merge(one_hour, three_hour, on='Time')
 
@@ -48,6 +48,6 @@ print(confusion_matrix(y, clf.predict(X) , normalize="true"))
 print(accuracy_score(y, clf.predict(X)))
 
 # new data
-# clf.predict_proba(X)
+clf.predict_proba(X)
 
 

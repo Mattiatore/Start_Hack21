@@ -151,6 +151,6 @@ def main():
     #getGASCurve()
 
 
-    getIntradayCurveFR()
+    getIntradayCurveFR()c
 
 main()
